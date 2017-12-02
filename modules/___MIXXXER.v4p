@@ -1,0 +1,155 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta35.8.dtd" >
+   <PATCH nodename="C:\Users\io\Desktop\deck\modules\___MIXXXER.v4p" scrollx="0" scrolly="-360" systemname="___MIXXXER" filename="C:\Users\io\Desktop\deck\modules\___MIXXXER.v4p">
+   <BOUNDS type="Window" left="60" top="144" width="5142" height="10104">
+   </BOUNDS>
+   <PACK Name="dx11" Version="1.0.3">
+   </PACK>
+   <PACK Name="vvvv-Message" Version="2.9.10">
+   </PACK>
+   <PACK Name="addonpack" Version="35.0.0">
+   </PACK>
+   <NODE systemname="Renderer (DX11)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11)" componentmode="InAWindow" id="26">
+   <BOUNDS type="Node" left="5232" top="1986" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="5232" top="1986" width="2400" height="1800">
+   </BOUNDS>
+   <BOUNDS type="Window" left="10494" top="3120" width="6654" height="6348">
+   </BOUNDS>
+   <PIN pinname="Node Ref" visible="-1" pintype="Output">
+   </PIN>
+   <PIN pinname="ID" visible="-1" pintype="Output">
+   </PIN>
+   <PIN pinname="Layers" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="View" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Projection" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="CreateNode (VVVV)" nodename="CreateNode (VVVV)" componentmode="Hidden" id="27">
+   <BOUNDS type="Node" left="156" top="894" width="4248" height="270">
+   </BOUNDS>
+   <PIN pinname="Parent Patch" slicecount="1" visible="-1" pintype="Input" values="self">
+   </PIN>
+   <PIN pinname="Node ID" visible="1" slicecount="1" values="32">
+   </PIN>
+   <PIN pinname="Node Name" visible="1">
+   </PIN>
+   <PIN pinname="Create Node" visible="1">
+   </PIN>
+   <PIN pinname="Query Save" visible="-1" pintype="Input" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Can Create" visible="-1" pintype="Output">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InABox" id="31" nodename="IOBox (String)" systemname="IOBox (String)" hiddenwhenlocked="0">
+   <BOUNDS height="0" left="150" top="4098" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="160" left="17625" top="11010" type="Window" width="215">
+   </BOUNDS>
+   <BOUNDS height="924" left="150" top="4098" type="Box" width="4164">
+   </BOUNDS>
+   <PIN pinname="Output String" visible="1">
+   </PIN>
+   <PIN pinname="Input String" slicecount="2" values="Sphere.v4p,Box.v4p">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Show SliceIndex" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="SliceCount Mode" slicecount="1" values="ColsRowsPages">
+   </PIN>
+   <PIN pinname="Size" slicecount="1" values="17">
+   </PIN>
+   </NODE>
+   <NODE componentmode="InABox" id="30" nodename="IOBox (Value Advanced)" systemname="IOBOX (VALUE ADVANCED)">
+   <BOUNDS height="0" left="4347" top="4098" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="160" left="6630" top="5835" type="Window" width="215">
+   </BOUNDS>
+   <BOUNDS height="918" left="4347" top="4098" type="Box" width="486">
+   </BOUNDS>
+   <PIN pinname="Minimum" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Maximum" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Slider Behavior" slicecount="1" values="Bang">
+   </PIN>
+   <PIN pinname="Show Slider" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Show Value" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Show SliceIndex" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="SliceCount Mode" slicecount="1" values="ColsRowsPages">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="2" values="0,0">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="2" values="0,0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="31" srcpinname="Output String" dstnodeid="27" dstpinname="Node Name" linkstyle="PolyLine" hiddenwhenlocked="1">
+   </LINK>
+   <LINK srcnodeid="30" srcpinname="Y Output Value" dstnodeid="27" dstpinname="Create Node" linkstyle="PolyLine" hiddenwhenlocked="1">
+   </LINK>
+   <NODE systemname="Box" filename="Box.v4p" nodename="Box.v4p" componentmode="InAWindow" id="32">
+   <BOUNDS type="Node" left="5388" top="654" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Window" left="5040" top="162" width="11430" height="10080">
+   </BOUNDS>
+   <PIN pinname="Out" visible="1">
+   </PIN>
+   <PIN pinname="ID" visible="1" pintype="Output">
+   </PIN>
+   <PIN pinname="View" visible="1">
+   </PIN>
+   <PIN pinname="Projection" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="32" srcpinname="Out" dstnodeid="26" dstpinname="Layers">
+   </LINK>
+   <LINK srcnodeid="32" srcpinname="ID" dstnodeid="27" dstpinname="Node ID">
+   </LINK>
+   <LINK srcnodeid="32" srcpinname="View" dstnodeid="26" dstpinname="View" linkstyle="Bezier">
+   <LINKPOINT x="5694" y="1446">
+   </LINKPOINT>
+   <LINKPOINT x="6642" y="1446">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="32" srcpinname="Projection" dstnodeid="26" dstpinname="Projection" linkstyle="Bezier">
+   <LINKPOINT x="5940" y="1455">
+   </LINKPOINT>
+   <LINKPOINT x="6804" y="1455">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="Preview (DX11.Texture)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="Preview (DX11.Texture)" componentmode="InAWindow" id="33" stayontop="1">
+   <BOUNDS type="Node" left="6588" top="2562" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="6588" top="2562" width="4770" height="4350">
+   </BOUNDS>
+   <BOUNDS type="Window" left="72" top="144" width="5118" height="4548">
+   </BOUNDS>
+   <PIN pinname="Texture In" visible="1">
+   </PIN>
+   <PIN pinname="Index" visible="-1" pintype="Input" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Show Alpha" visible="-1" pintype="Input" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Background Color" visible="-1" pintype="Input" slicecount="1" values="|0.50000,0.50000,0.50000,1.00000|">
+   </PIN>
+   <PIN pinname="Sampler State" visible="-1" pintype="Input" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="26" srcpinname="Texture Out" dstnodeid="33" dstpinname="Texture In" linkstyle="PolyLine" hiddenwhenlocked="0">
+   </LINK>
+   </PATCH>

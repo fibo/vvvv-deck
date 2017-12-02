@@ -1,0 +1,81 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta35.8.dtd" >
+   <PATCH nodename="C:\Users\io\Desktop\deck\modules\Sphere.v4p" scrollx="0" scrolly="0" systemname="Sphere" filename="C:\Users\io\Desktop\deck\modules\Sphere.v4p">
+   <BOUNDS type="Window" left="8682" top="4800" width="9000" height="6000">
+   </BOUNDS>
+   <NODE systemname="GouraudDirectional (DX11.Effect)" filename="%VVVV%\packs\dx11\nodes\dx11\GouraudDirectional.fx" nodename="GouraudDirectional (DX11.Effect)" componentmode="Hidden" id="2">
+   <BOUNDS type="Node" left="1824" top="2412" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Geometry" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="Group (DX11.Layer)" id="3" systemname="Group (DX11.Layer)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll">
+   <BOUNDS type="Node" left="1824" top="2850" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1824" top="2850" width="2400" height="1800">
+   </BOUNDS>
+   <PIN pinname="Layer Out" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="2" srcpinname="Layer" dstnodeid="3" dstpinname="Layer 1">
+   </LINK>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="23" systemname="IOBox (Node)">
+   <BOUNDS type="Box" left="1512" top="4332" width="798" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1512" top="4332" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Out">
+   </PIN>
+   <PIN pinname="Input Node" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <PACK Name="dx11" Version="1.0.3">
+   </PACK>
+   <PACK Name="vvvv-Message" Version="2.9.10">
+   </PACK>
+   <PACK Name="addonpack" Version="35.0.0">
+   </PACK>
+   <NODE systemname="Sphere (DX11.Geometry)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="Sphere (DX11.Geometry)" componentmode="Hidden" id="24">
+   <BOUNDS type="Node" left="2262" top="1668" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2262" top="1668" width="1200" height="1200">
+   </BOUNDS>
+   <PIN pinname="Geometry Out" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="24" srcpinname="Geometry Out" dstnodeid="2" dstpinname="Geometry">
+   </LINK>
+   <LINK srcnodeid="3" srcpinname="Layer Out" dstnodeid="23" dstpinname="Input Node">
+   </LINK>
+   <NODE systemname="Camera (Transform Softimage)" filename="%VVVV%\lib\packs\VL.EditingFramework.0.55.43-g436959e253\vvvv\nodes\modules\Camera (Transform Softimage).v4p" nodename="Camera (Transform Softimage)" componentmode="Hidden" id="25">
+   <BOUNDS type="Node" left="4608" top="1104" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="View" visible="1">
+   </PIN>
+   <PIN pinname="Projection" visible="1">
+   </PIN>
+   <PIN pinname="Initial Distance" slicecount="1" values="15">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="26">
+   <BOUNDS type="Box" left="4704" top="3246" width="798" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="4704" top="3246" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" slicecount="1" values="View">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="25" srcpinname="View" dstnodeid="26" dstpinname="Input Node">
+   </LINK>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="27">
+   <BOUNDS type="Box" left="5640" top="2664" width="798" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="5640" top="2664" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Projection">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="25" srcpinname="Projection" dstnodeid="27" dstpinname="Input Node">
+   </LINK>
+   </PATCH>
