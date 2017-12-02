@@ -10,3 +10,5 @@ You will see a list of patches you can switch by clicking on the buttons, like i
 
 Please note that there is a preview render on top, while the actual render is elsewhere, you probably want to open it in full screen on another display.
 Patches must be saved in the *modules* folder and added manually to the list. All patches must have the same identical outputs.
+
+![preview](screenshot.png)
